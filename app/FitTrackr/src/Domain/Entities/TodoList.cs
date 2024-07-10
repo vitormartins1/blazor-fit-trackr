@@ -1,4 +1,5 @@
 using FitTrackr.Domain.Common;
+using System;
 
 namespace FitTrackr.Domain.Entities;
 

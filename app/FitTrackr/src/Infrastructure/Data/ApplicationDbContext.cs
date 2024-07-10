@@ -27,6 +27,19 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser, Applicati
     public DbSet<TodoList> TodoLists => Set<TodoList>();
     public DbSet<TodoItem> TodoItems => Set<TodoItem>();
 
+    public DbSet<TrainingPlan> TrainingPlans => Set<TrainingPlan>();
+    public DbSet<TrainingPhase> TrainingPhases => Set<TrainingPhase>();
+    public DbSet<TrainingSession> TrainingSessions => Set<TrainingSession>();
+    public DbSet<BodyRegion> BodyRegions => Set<BodyRegion>();
+    public DbSet<Muscle> Muscles => Set<Muscle>();
+    public DbSet<PrimaryFunction> PrimaryFunctions => Set<PrimaryFunction>();
+    public DbSet<Equipment> Equipments => Set<Equipment>();
+    public DbSet<ExerciseType> ExerciseTypes => Set<ExerciseType>();
+    public DbSet<IntensityLevel> IntensityLevels => Set<IntensityLevel>();
+    public DbSet<ExerciseNote> ExerciseNotes => Set<ExerciseNote>();
+    public DbSet<Exercise> Exercises => Set<Exercise>();
+    public DbSet<ExerciseSession> ExerciseSessions => Set<ExerciseSession>();
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
 

@@ -1,8 +1,8 @@
 using FitTrackr.Application.Common.Services.DateTime;
 
-namespace FitTrackr.Infrastructure.DateTime;
+namespace FitTrackr.Infrastructure.DateAndTime;
 
 public class DateTimeProvider : IDateTimeProvider
 {
-    public System.DateTime UtcNow => System.DateTime.UtcNow;
+    public DateTime UtcNow => DateTime.UtcNow;
 }

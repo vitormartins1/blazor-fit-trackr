@@ -1,6 +1,6 @@
 using FitTrackr.Application.Common.Services.DateTime;
 using FitTrackr.Application.Common.Services.Identity;
-using FitTrackr.Infrastructure.DateTime;
+using FitTrackr.Infrastructure.DateAndTime;
 using FitTrackr.Infrastructure.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
