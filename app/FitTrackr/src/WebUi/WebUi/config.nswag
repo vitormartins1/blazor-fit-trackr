@@ -98,6 +98,7 @@
         "Microsoft.AspNetCore.Mvc",
         "FitTrackr.WebUi.Shared.TodoItems",
         "FitTrackr.WebUi.Shared.TodoLists",
+        "FitTrackr.WebUi.Shared.ExerciseNotes",
         "FitTrackr.WebUi.Shared.WeatherForecasts",
         "FitTrackr.WebUi.Shared.AccessControl"
       ],

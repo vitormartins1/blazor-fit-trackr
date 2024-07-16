@@ -16,5 +16,6 @@ public enum Permissions
     Counter = 64,
     Forecast = 128,
     Todo = 256,
+    Exercices = 512,
     All = ~None
 }

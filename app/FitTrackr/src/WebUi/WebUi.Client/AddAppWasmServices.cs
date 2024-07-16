@@ -20,10 +20,11 @@ public static class AppServices
             .AddClasses()
             .AsImplementedInterfaces()
             .WithScopedLifetime());
-
+        
         builder.Services.AddScoped<ITodoItemsHandler, TodoItemsApiHandler>();
         builder.Services.AddScoped<ITodoListHandler, TodoApiHandler>();
         builder.Services.AddScoped<IUserHandler, UserApiHandler>();
+        builder.Services.AddScoped<IExerciseNoteHandler, ExerciseNotesApiHandler>();
         
         return builder;
     }
@@ -33,6 +34,7 @@ public static class AppServices
         services.AddScoped<IUserHandler, UserServerHandler>();
         services.AddScoped<ITodoListHandler, TodoListServerHandler>();
         services.AddScoped<ITodoItemsHandler, TodoItemsServerHandler>();
+        services.AddScoped<IExerciseNoteHandler, ExerciseNotesServerHandler>();
         
         return services;
     }

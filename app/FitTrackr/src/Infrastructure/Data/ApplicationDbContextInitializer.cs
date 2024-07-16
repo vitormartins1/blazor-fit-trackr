@@ -36,6 +36,7 @@ public class ApplicationDbContextInitializer
     {
         await SeedIdentityAsync();
         await SeedDataAsync();
+        await SeedExerciseNotesAsync();
     }
 
     private async Task InitialiseWithDropCreateAsync()
@@ -110,6 +111,36 @@ public class ApplicationDbContextInitializer
         };
 
         _context.TodoLists.Add(list);
+        await _context.SaveChangesAsync();
+    }
+
+    private async Task SeedExerciseNotesAsync()
+    {
+        if (await _context.ExerciseNotes.AnyAsync())
+        {
+            return;
+        }
+
+        var notes = new List<ExerciseNote>
+        {
+            new ExerciseNote
+            {
+                Name = "Pico de Contração",
+                Description = "No ponto máximo de contração de um músculo (final da fase concêntrica), é feita uma contração isométrica (estática), realizar em todas as repetições."
+            },
+            new ExerciseNote
+            {
+                Name = "Drop set",
+                Description = "Nesse método o indivíduo realiza uma série e sem descanso retira 20‐50% da carga, logo em seguida e sem descanso realiza mais repetições com o peso reduzido."
+            },
+            new ExerciseNote
+            {
+                Name = "Back off set",
+                Description = "Nesse método o indivíduo consegue explorar um volume maior em menos tempo sem perder tanto a intensidade."
+            }
+        };
+
+        _context.ExerciseNotes.AddRange(notes);
         await _context.SaveChangesAsync();
     }
 }

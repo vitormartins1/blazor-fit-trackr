@@ -6,6 +6,67 @@
     "version": "1.0.0"
   },
   "paths": {
+    "/api/ExerciseNotes": {
+      "get": {
+        "tags": [
+          "ExerciseNotes"
+        ],
+        "operationId": "ExerciseNotes_GetExerciseNotes",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExerciseNotesVm"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "basic": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "ExerciseNotes"
+        ],
+        "operationId": "ExerciseNotes_PostExerciseNote",
+        "requestBody": {
+          "x-name": "request",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateExerciseNoteRequest"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "basic": []
+          }
+        ]
+      }
+    },
     "/api/TodoItems": {
       "post": {
         "tags": [
@@ -418,6 +479,46 @@
   },
   "components": {
     "schemas": {
+      "ExerciseNotesVm": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "exerciceNotes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ExerciseNoteDto"
+            }
+          }
+        }
+      },
+      "ExerciseNoteDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      },
+      "CreateExerciseNoteRequest": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      },
       "CreateTodoItemRequest": {
         "type": "object",
         "additionalProperties": false,
@@ -667,6 +768,7 @@
           "Counter",
           "Forecast",
           "Todo",
+          "Exercices",
           "All"
         ],
         "enum": [
@@ -680,6 +782,7 @@
           64,
           128,
           256,
+          512,
           -1
         ]
       }

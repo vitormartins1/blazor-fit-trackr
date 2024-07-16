@@ -1,0 +1,20 @@
+﻿@attribute [Authorize]
+@rendermode InteractiveWebAssembly
+
+@if (Initialized)
+{
+    <MudList Dense="true">
+        @foreach (var note in Model!.ExerciceNotes)
+        {
+            <MudListItem>
+                @note.Name
+            </MudListItem>
+            <MudListItem>
+                @note.Description
+            </MudListItem>
+        }
+    </MudList>
+}else
+{
+    <p>Sem notas.</p>
+}
