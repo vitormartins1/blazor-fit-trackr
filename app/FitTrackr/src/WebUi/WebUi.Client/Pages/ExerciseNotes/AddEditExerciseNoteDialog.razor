@@ -1,0 +1,16 @@
+﻿@rendermode InteractiveWebAssembly
+@if (State is null) return;
+<MudDialog>
+    <DialogContent>
+        <EditForm Model="_exerciseNote" OnValidSubmit="Save">
+            <FluentValidationValidator DisableAssemblyScanning="true" />
+            <CustomValidation @ref="_customValidation" />
+            <MudTextField @ref="_nameInput" T="string" bind-Value="_exerciseNote.Name" Placeholder="Name..." Label="Name" For="()=>_exerciseNote.Name" />
+            <MudTextField @ref="_descriptionInput" T="string" bind-Value="_exerciseNote.Description" Placeholder="Description..." Label="Description" For="()=>_exerciseNote.Description" />
+        </EditForm>
+    </DialogContent>
+    <DialogActions>
+        <MudButton ButtonType="ButtonType.Submit" Color="Color.Primary">Save</MudButton>
+        <MudButton ButtonType="ButtonType.Button" Color="Color.Default" OnClick="Cancel">Cancel</MudButton>
+    </DialogActions>
+</MudDialog>

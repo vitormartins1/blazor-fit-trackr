@@ -11,10 +11,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="Pages\ExerciseNotes\ExerciseNotes.razor" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Blazored.FluentValidation" Version="2.1.0" />
     <PackageReference Include="FluentValidation" Version="11.9.0" />
     <PackageReference Include="MediatR" Version="12.2.0" />
@@ -40,7 +36,6 @@
     <_ContentIncludedByDefault Remove="Pages\Pages\Todo\TodoItems.razor" />
     <_ContentIncludedByDefault Remove="Pages\Pages\Todo\TodoLists.razor" />
     <_ContentIncludedByDefault Remove="Pages\Pages\Todo\TodoState.razor" />
-	<_ContentIncludedByDefault Remove="Pages\ExerciseNotes\ExerciseNotes.razor" />
   </ItemGroup>
 
   <ItemGroup>
